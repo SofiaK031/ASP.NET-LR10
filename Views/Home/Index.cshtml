@@ -1,0 +1,84 @@
+﻿@model RegistrationModel
+
+@{
+    ViewData["Title"] = "Home Page";
+
+    var courses = Enum.GetValues(typeof(RegistrationModel.Courses));
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/formStyles.css" />
+</head>
+
+<div class="text-center">
+    <h4 class="display-5 mb-3">Registration for consultation</h4>
+    <form asp-action="Index" asp-controller="Home">
+        <div>
+            <div>
+                <div class="form-block">
+                    <div class="form-group">
+                        <label asp-for="FirstName">First name:</label><br />
+                        <input type="text" asp-for="FirstName" value="@Model?.FirstName" />
+                    </div>
+                    <span asp-validation-for="FirstName"></span>
+                </div>
+            </div>
+
+            <div>
+                <div class="form-block">
+                    <div class="form-group">
+                        <label asp-for="LastName">Last name:</label><br />
+                        <input type="text" asp-for="LastName" value="@Model?.LastName" />
+                    </div>
+                    <span asp-validation-for="LastName"></span>
+                </div>
+            </div>
+
+            <div>
+                <div class="form-block">
+                    <div class="form-group">
+                        <label asp-for="Email">Email: </label><br />
+                        <input type="email" asp-for="Email" value="@Model?.Email" />
+                    </div>
+                    <span asp-validation-for="Email"></span>
+                </div>
+            </div>
+
+            <div>
+                <div class="form-block">
+                    <div class="form-group">
+                        <label asp-for="DesirableDate">Date: </label><br />
+                        <input type="date" asp-for="DesirableDate" value="@Model?.DesirableDate.ToString("yyyy-MM-dd")" />
+                    </div>
+                    <span asp-validation-for="DesirableDate"></span>
+                </div>
+            </div>
+            <div>
+                <div class="form-block">
+                    <div class="form-group">
+                        <label asp-for="Course">Course: </label><br />
+                        <select asp-for="Course" value="@Model?.Course">
+                            @foreach (RegistrationModel.Courses course in courses)
+                            {
+                                <option value="@course">@AdditionForEnum.GetDisplayName(course)</option>
+                            }
+                        </select>
+                    </div>
+                    <span asp-validation-for="Course"></span>
+                </div>
+            </div>
+
+
+            <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+            <input type="submit" value="Register" />
+        </div>
+    </form>
+
+    @if (!string.IsNullOrEmpty((string?)ViewData["Message"]))
+    {
+        <h1>@ViewData["Message"]</h1>
+    }
+</div>
+
+@await Html.PartialAsync("_ValidationScriptsPartial")

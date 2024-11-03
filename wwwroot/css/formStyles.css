@@ -1,0 +1,100 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h4 {
+    color: #343a40;
+    font-family: "Dancing Script", cursive;
+}
+
+form {
+    max-width: 470px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.form-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    margin-right: 10px;
+    font-weight: bold;
+    min-width: 100px;
+    justify-content: flex-end;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    transform: translateY(-3px);
+    color: #FFFACD;
+}
+
+span {
+    color: red;
+    font-size: 14px;
+}
+
+.validation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.validation ul li {
+    display: block;
+    color: red;
+    margin-bottom: 5px;
+}
+
+
+h1 {
+    font-size: 1.5em;
+    color: #4CAF50;
+    margin-top: 10px;
+    font-weight: bold;
+}
